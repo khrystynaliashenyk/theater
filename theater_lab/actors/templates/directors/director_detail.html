@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Director Details</title>
+</head>
+<body>
+<h1>Director Details</h1>
+<p>ID: {{ director.pk }}</p>
+<p>Name: {{ director.first_name }} {{ director.last_name }}</p>
+<p>Date of Birth: {{ director.date_of_birth }}</p>
+<a href="{% url 'director_edit' director.pk %}">Edit</a>
+<a href="{% url 'director_list' %}">Back to list</a>
+</body>
+</html>

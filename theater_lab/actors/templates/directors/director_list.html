@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Directors</title>
+</head>
+<body>
+<h1>List of Directors</h1>
+<ul>
+    {% for director in directors %}
+        <li>
+            <a href="{% url 'director_detail' director.pk %}">{{ director.first_name }} {{ director.last_name }}</a>
+            <form method="get" action="{% url 'director_delete' director.pk %}" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'director_create' %}">Add a new director</a>
+<br>
+<a href="{% url 'home' %}"> Return to Home</a>
+</body>
+</html>

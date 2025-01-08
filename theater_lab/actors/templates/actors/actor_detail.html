@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actor Details</title>
+</head>
+<body>
+<h1>Actor Details</h1>
+<p>ID: {{ actor.pk }}</p>
+<p>Name: {{ actor.first_name }} {{ actor.last_name }}</p>
+<p>Date of Birth: {{ actor.date_of_birth }}</p>
+<a href="{% url 'actor_edit' actor.pk %}">Edit</a>
+<a href="{% url 'actor_list' %}">Back to list</a>
+
+</body>
+</html>

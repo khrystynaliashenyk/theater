@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Number of Plays by Genre</h1>
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% else %}
+        <div id="plotly-chart">
+            {{ plotly_chart|safe }}
+        </div>
+    {% endif %}
+</body>
+</html>

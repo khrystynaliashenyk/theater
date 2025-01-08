@@ -1,0 +1,28 @@
+<!-- dashboard2.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Price Dashboard</title>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.1.0.min.js"></script>
+    <link href="https://cdn.bokeh.org/bokeh/release/bokeh-3.1.0.min.css" rel="stylesheet">
+
+    <!-- Вставка скриптів для графіків Bokeh -->
+    {{ ticket_price_range_script|safe }}
+</head>
+<body>
+    <h1>Ticket Price Statistics</h1>
+
+    <!-- Графік для мінімальної та максимальної ціни квитка -->
+    <div>
+        <h3>Ticket Price Range by Play (Bokeh)</h3>
+        {{ ticket_price_range_div|safe }}
+    </div>
+
+    {% if error %}
+        <div style="color: red;">
+            <p>{{ error }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
