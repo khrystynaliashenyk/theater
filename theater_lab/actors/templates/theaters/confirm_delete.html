@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Delete</title>
+</head>
+<body>
+<h1>Are you sure you want to delete this theater?</h1>
+<p>Name: {{ theater.name }}</p>
+<p>Address: {{ theater.address }}</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, delete</button>
+    <a href="{% url 'theater_list' %}"><button type="button">Cancel</button></a>
+</form>
+</body>
+</html>

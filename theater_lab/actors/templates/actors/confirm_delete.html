@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Delete</title>
+</head>
+<body>
+<h1>Are you sure you want to delete this actor?</h1>
+<p>Name: {{ actor.first_name }} {{ actor.last_name }}</p>
+<p>Date of Birth: {{ actor.date_of_birth }}</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, delete</button>
+    <a href="{% url 'actor_list' %}"><button type="button">Cancel</button></a>
+</form>
+</body>
+</html>

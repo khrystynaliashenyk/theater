@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Ticket Price Dashboard</title>
+</head>
+<body>
+    <h1>Ticket Price Statistics</h1>
+
+
+
+    <div>
+        <h3>Ticket Price Range by Play</h3>
+        {{ ticket_price_range_plot|safe }}
+    </div>
+
+<div>
+        <h3>Average Ticket Price by Play</h3>
+        {{ avg_ticket_price_plot|safe }}
+    </div>
+</body>
+</html>

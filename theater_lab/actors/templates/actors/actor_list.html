@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Of Actors</title>
+</head>
+<body>
+    <h1>Actor List</h1>
+<ul>
+    {% for actor in actors %}
+        <li>
+            {{ actor.first_name }} {{ actor.last_name }}
+            <form action="{% url 'actor_delete' pk=actor.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+    <a href="{% url 'actor_create' %}">Add a new actor</a>
+    <br>
+    <a href="{% url 'home' %}">Return to Home</a>
+</body>
+</html>

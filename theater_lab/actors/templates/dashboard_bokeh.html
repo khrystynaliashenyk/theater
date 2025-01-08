@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bokeh Dashboard</title>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.1.0.min.js"></script>
+    <link href="https://cdn.bokeh.org/bokeh/release/bokeh-3.1.0.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Bokeh Dashboard</h1>
+
+    <h2>Average Ticket Price Trend by Play</h2>
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% else %}
+        <div class="bokeh-container">
+            {{ line_script|safe }}
+            <div>{{ line_div|safe }}</div>
+        </div>
+    {% endif %}
+
+    <h2>Revenue Distribution by Play</h2>
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% else %}
+        <div class="bokeh-container">
+            {{ pie_script|safe }}
+            <div>{{ pie_div|safe }}</div>
+        </div>
+    {% endif %}
+
+    <!-- Стовпчикова діаграма -->
+    <h2>Seat Occupancy by Hall</h2>
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% else %}
+        <div class="bokeh-container">
+            {{ bar_script|safe }}
+            <div>{{ bar_div|safe }}</div>
+        </div>
+    {% endif %}
+
+</body>
+</html>

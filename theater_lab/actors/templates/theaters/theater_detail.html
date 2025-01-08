@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Theater Details</title>
+</head>
+<body>
+<h1>Theater Details</h1>
+<p>Name: {{ theater.name }}</p>
+<p>Address: {{ theater.address }}</p>
+<p>Number of Halls: {{ theater.number_of_halls }}</p>
+<a href="{% url 'theater_edit' theater.pk %}">Edit</a>
+<a href="{% url 'theater_list' %}">Back to list</a>
+</body>
+</html>

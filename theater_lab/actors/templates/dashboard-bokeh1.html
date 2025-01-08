@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bokeh Dashboard</title>
+    {{ line_script|safe }}
+    {{ pie_script|safe }}
+</head>
+<body>
+
+<h1>Bokeh Dashboard</h1>
+
+{% if error %}
+    <p>{{ error }}</p>
+{% else %}
+    <div>
+        <h2>Average Ticket Price by Play</h2>
+        {{ line_div|safe }}
+    </div>
+    <div>
+        <h2>Revenue by Play</h2>
+        {{ pie_div|safe }}
+    </div>
+{% endif %}
+
+</body>
+</html>
